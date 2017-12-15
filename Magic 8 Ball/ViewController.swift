@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let ballImages = ["ball1", "ball2", "ball3", "ball4"]
+    let ballArray = ["ball1", "ball2", "ball3", "ball4", "ball5"]
     var randomNumber: Int = 0
 
     @IBOutlet weak var ballImage: UIImageView!
@@ -26,7 +26,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func askButtonPressed(_ sender: Any) {
-        
+        setBallImage()
+    }
+    
+    func setBallImage() {
+        randomNumber = Int(arc4random_uniform(5))
+        ballImage.image = UIImage(named: ballArray[randomNumber])
     }
 
 }
